@@ -1,0 +1,894 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Github上的python资料 | 雪轩</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="exuan">
+    
+    <meta name="description" content="感谢 kirang89(pycrumbs) 汇集
+Contents
+
+Beginner’s Delight
+Why Python?
+Style Guide and Idioms
+Dictionary
+Decorators
+Generators
+Iterators
+Yield
+Context Mana">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="雪轩" title="雪轩"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="雪轩">雪轩</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:www.exuan.org">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/04/04/github-python-resources-pycrumbs/" title="Github上的python资料" itemprop="url">Github上的python资料</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://www.exuan.org" title="exuan">exuan</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-04-04T07:15:56.000Z" itemprop="datePublished">Apr 4 2014</time>
+    Updated:<time datetime="2014-03-31T03:34:16.000Z" itemprop="dateModified">Mar 31 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Contents"><span class="toc-number">1.</span> <span class="toc-text">Contents</span></a></li><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Beginner’s_Delight"><span class="toc-number">1.1.</span> <span class="toc-text">Beginner’s Delight</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why_Python?"><span class="toc-number">1.2.</span> <span class="toc-text">Why Python?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Style_Guide_and_Idioms"><span class="toc-number">1.3.</span> <span class="toc-text">Style Guide and Idioms</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dictionary"><span class="toc-number">1.4.</span> <span class="toc-text">Dictionary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Decorators"><span class="toc-number">1.5.</span> <span class="toc-text">Decorators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Generators"><span class="toc-number">1.6.</span> <span class="toc-text">Generators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Iterators"><span class="toc-number">1.7.</span> <span class="toc-text">Iterators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield"><span class="toc-number">1.8.</span> <span class="toc-text">Yield</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Context_Managers"><span class="toc-number">1.9.</span> <span class="toc-text">Context Managers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unicode"><span class="toc-number">1.10.</span> <span class="toc-text">Unicode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Networking"><span class="toc-number">1.11.</span> <span class="toc-text">Networking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Metaclasses"><span class="toc-number">1.12.</span> <span class="toc-text">Metaclasses</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Documentation"><span class="toc-number">1.13.</span> <span class="toc-text">Documentation</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sphinx"><span class="toc-number">1.13.1.</span> <span class="toc-text">Sphinx</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Environments_and_Environment_Management"><span class="toc-number">1.14.</span> <span class="toc-text">Environments and Environment Management</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Debugging"><span class="toc-number">1.15.</span> <span class="toc-text">Debugging</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Logging"><span class="toc-number">1.15.1.</span> <span class="toc-text">Logging</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Testing"><span class="toc-number">1.16.</span> <span class="toc-text">Testing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Profiling"><span class="toc-number">1.17.</span> <span class="toc-text">Profiling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Packaging"><span class="toc-number">1.18.</span> <span class="toc-text">Packaging</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deployment"><span class="toc-number">1.19.</span> <span class="toc-text">Deployment</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fabric"><span class="toc-number">1.19.1.</span> <span class="toc-text">Fabric</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Warts_and_Gotchas"><span class="toc-number">1.20.</span> <span class="toc-text">Warts and Gotchas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web"><span class="toc-number">1.21.</span> <span class="toc-text">Web</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Frameworks"><span class="toc-number">1.21.1.</span> <span class="toc-text">Frameworks</span></a></li><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flask"><span class="toc-number">1.21.1.1.</span> <span class="toc-text">Flask</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Web2Py"><span class="toc-number">1.21.1.2.</span> <span class="toc-text">Web2Py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Django"><span class="toc-number">1.21.1.3.</span> <span class="toc-text">Django</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bottle"><span class="toc-number">1.21.1.4.</span> <span class="toc-text">Bottle</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tornado"><span class="toc-number">1.21.1.5.</span> <span class="toc-text">Tornado</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#Web_Servers"><span class="toc-number">1.21.2.</span> <span class="toc-text">Web Servers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API_and_Web_Services"><span class="toc-number">1.21.3.</span> <span class="toc-text">API and Web Services</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scraping"><span class="toc-number">1.21.4.</span> <span class="toc-text">Scraping</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Mobile_Development"><span class="toc-number">1.22.</span> <span class="toc-text">Mobile Development</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kivy"><span class="toc-number">1.22.1.</span> <span class="toc-text">Kivy</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Google_Glass"><span class="toc-number">1.23.</span> <span class="toc-text">Google Glass</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Resources"><span class="toc-number">1.23.1.</span> <span class="toc-text">Resources</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Libraries"><span class="toc-number">1.23.2.</span> <span class="toc-text">Libraries</span></a></li><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#glass-py"><span class="toc-number">1.23.2.1.</span> <span class="toc-text">glass.py</span></a></li></ol></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Image_Processing"><span class="toc-number">1.24.</span> <span class="toc-text">Image Processing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GUI_Programming"><span class="toc-number">1.25.</span> <span class="toc-text">GUI Programming</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android"><span class="toc-number">1.26.</span> <span class="toc-text">Android</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SL4A"><span class="toc-number">1.26.1.</span> <span class="toc-text">SL4A</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#WSGI"><span class="toc-number">1.27.</span> <span class="toc-text">WSGI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Databases"><span class="toc-number">1.28.</span> <span class="toc-text">Databases</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQLAlchemy"><span class="toc-number">1.28.1.</span> <span class="toc-text">SQLAlchemy</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Data_Mining"><span class="toc-number">1.29.</span> <span class="toc-text">Data Mining</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data_Analysis"><span class="toc-number">1.30.</span> <span class="toc-text">Data Analysis</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pandas"><span class="toc-number">1.30.1.</span> <span class="toc-text">Pandas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPython_Notebooks"><span class="toc-number">1.30.2.</span> <span class="toc-text">IPython Notebooks</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Design_Patterns"><span class="toc-number">1.31.</span> <span class="toc-text">Design Patterns</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Concurrency_Patterns"><span class="toc-number">1.31.1.</span> <span class="toc-text">Concurrency Patterns</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Concurrency_and_Distributed_Systems"><span class="toc-number">1.32.</span> <span class="toc-text">Concurrency and Distributed Systems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Functional_Programming"><span class="toc-number">1.33.</span> <span class="toc-text">Functional Programming</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python_2_vs_3"><span class="toc-number">1.34.</span> <span class="toc-text">Python 2 vs 3</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Porting_to_Python_3"><span class="toc-number">1.34.1.</span> <span class="toc-text">Porting to Python 3</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Books"><span class="toc-number">1.35.</span> <span class="toc-text">Books</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Free"><span class="toc-number">1.35.1.</span> <span class="toc-text">Free</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Paid"><span class="toc-number">1.35.2.</span> <span class="toc-text">Paid</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Online_Courses_and_Challenges"><span class="toc-number">1.36.</span> <span class="toc-text">Online Courses and Challenges</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discussions"><span class="toc-number">1.37.</span> <span class="toc-text">Discussions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conferences_and_events"><span class="toc-number">1.38.</span> <span class="toc-text">Conferences and events</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Videos"><span class="toc-number">1.39.</span> <span class="toc-text">Videos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Editors_and_IDE’s_for_Python_programming"><span class="toc-number">1.40.</span> <span class="toc-text">Editors and IDE’s for Python programming</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigData"><span class="toc-number">1.41.</span> <span class="toc-text">BigData</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Curated_Python_resources_from_other_websites"><span class="toc-number">1.42.</span> <span class="toc-text">Curated Python resources from other websites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Newsletters"><span class="toc-number">1.43.</span> <span class="toc-text">Newsletters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Miscellaneous"><span class="toc-number">1.44.</span> <span class="toc-text">Miscellaneous</span></a></li></ol>
+		</div>
+		
+		<p>感谢 <a href="https://github.com/kirang89/pycrumbs" target="_blank">kirang89(pycrumbs)</a> 汇集</p>
+<h1 id="Contents">Contents</h1>
+<ul>
+<li><a href="#beginners-delight">Beginner’s Delight</a></li>
+<li><a href="#why-python">Why Python?</a></li>
+<li><a href="#style-guide-and-idioms">Style Guide and Idioms</a></li>
+<li><a href="#dictionary">Dictionary</a></li>
+<li><a href="#decorators">Decorators</a></li>
+<li><a href="#generators">Generators</a></li>
+<li><a href="#iterators">Iterators</a></li>
+<li><a href="#yield">Yield</a></li>
+<li><a href="#context-managers">Context Managers</a></li>
+<li><a href="#unicode">Unicode</a></li>
+<li><a href="#networking">Networking</a></li>
+<li><a href="#metaclasses">Metaclasses</a></li>
+<li><a href="#documentation">Documentation</a><ul>
+<li><a href="#sphinx">Sphinx</a></li>
+</ul>
+</li>
+<li><a href="#debugging">Debugging</a><ul>
+<li><a href="#logging">Logging</a></li>
+</ul>
+</li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#environments-and-environment-management">Environments and Environment Management</a></li>
+<li><a href="#profiling">Profiling</a></li>
+<li><a href="#packaging">Packaging</a></li>
+<li><a href="#deployment">Deployment</a><ul>
+<li><a href="#fabric">Fabric</a></li>
+</ul>
+</li>
+<li><a href="#warts-and-gotchas">Warts and Gotchas</a></li>
+<li><a href="#web">Web</a><ul>
+<li><a href="#frameworks">Frameworks</a><ul>
+<li><a href="#flask">Flask</a></li>
+<li><a href="#web2py">Web2Py</a></li>
+<li><a href="#django">Django</a></li>
+<li><a href="#bottle">Bottle</a></li>
+<li><a href="#tornado">Tornado</a></li>
+</ul>
+</li>
+<li><a href="#web-servers">Web Servers</a></li>
+<li><a href="#api-and-web-services">API and Web Services</a></li>
+<li><a href="#scraping">Scraping</a></li>
+</ul>
+</li>
+<li><a href="#mobile-development">Mobile Development</a><ul>
+<li><a href="#kivy">Kivy</a></li>
+</ul>
+</li>
+<li><a href="#google-glass">Google Glass</a><ul>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#libraries">Libraries</a></li>
+</ul>
+</li>
+<li><a href="#gui-programming">GUI Programming</a></li>
+<li><a href="#Android">Android</a><ul>
+<li><a href="#sl4a">SL4A</a></li>
+</ul>
+</li>
+<li><a href="#wsgi">WSGI</a></li>
+<li><a href="#databases">Databases</a><ul>
+<li><a href="#sqlalchemy">SQLAlchemy</a></li>
+</ul>
+</li>
+<li><a href="#data-mining">Data Mining</a></li>
+<li><a href="#data-analysis">Data Analysis</a><ul>
+<li><a href="#pandas">Pandas</a></li>
+</ul>
+</li>
+<li><a href="#design-patterns">Design Patterns</a><ul>
+<li><a href="#concurrency-patterns">Concurrency Patterns</a></li>
+</ul>
+</li>
+<li><a href="#concurrency-and-distributed-systems">Concurrency and Distributed Systems</a></li>
+<li><a href="#functional-programming">Functional Programming</a></li>
+<li><a href="#python-2-vs-3">Python 2 vs Python 3</a><ul>
+<li><a href="#porting-to-python-3">Porting to Python 3</a></li>
+</ul>
+</li>
+<li><a href="#books">Books</a><ul>
+<li><a href="#free">Free</a></li>
+<li><a href="#paid">Paid</a></li>
+</ul>
+</li>
+<li><a href="#online-courses-and-challenges">Online Courses and Challenges</a></li>
+<li><a href="#discussions">Discussions</a></li>
+<li><a href="#conferences-and-events">Conferences and Events</a></li>
+<li><a href="#videos">Videos</a></li>
+<li><a href="#editors-and-ides-for-python-programming">Editors and IDE’s for Python programming</a></li>
+<li><a href="#bigdata">Big Data</a></li>
+<li><a href="#curated-python-resources-from-other-websites">Curated Python resources from other websites</a></li>
+<li><a href="#newsletters">Newsletters</a></li>
+<li><a href="#miscellaneous">Miscellaneous</a></li>
+</ul>
+<h2 id="Beginner’s_Delight">Beginner’s Delight</h2>
+<ul>
+<li><a href="http://wiki.python.org/moin/BeginnersGuide" target="_blank">Beginner’s guide to Python</a></li>
+<li><a href="http://docs.python-guide.org/en/latest/" target="_blank">The Hitchhiker’s guide to Python</a></li>
+<li><a href="http://learnpythonthehardway.org/book/" target="_blank">Learn Python the hard way</a></li>
+<li><a href="http://www.learnpython.org/" target="_blank">Learn Python</a></li>
+<li><a href="https://developers.google.com/edu/python/" target="_blank">Google’s Python class</a></li>
+<li><a href="http://www.codecademy.com/tracks/python" target="_blank">Python tracks at Codecademy</a></li>
+<li><a href="http://pythonmonk.com/" target="_blank">Python Monk</a></li>
+<li><a href="http://www.pythonforbeginners.com/" target="_blank">Python for Beginners</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/the-best-way-to-learn-python/" target="_blank">Best way to learn python</a></li>
+<li><a href="http://lurnq.com/lesson/Getting-started-with-Python-Tips-Tools-and-Resources" target="_blank">Python Tips, tools and resources</a></li>
+<li><a href="https://github.com/gregmalcolm/python_koans" target="_blank">Python Koans: Learn Python through TDD</a></li>
+<li><a href="http://www.learnstreet.com/lessons/study/python" target="_blank">LearnStreet Python course</a></li>
+<li><a href="http://newcoder.io/" target="_blank">Beginner projects for a python newbie</a></li>
+<li><a href="http://learnxinyminutes.com/docs/python/" target="_blank">Learn X in Y minutes - Python</a></li>
+<li><a href="http://anandology.com/python-practice-book/" target="_blank">Python Practice book</a></li>
+<li><a href="http://nedbatchelder.com/text/names.html" target="_blank">Facts and myths about Python names and values</a></li>
+<li><a href="http://freepythontips.wordpress.com/2013/08/04/args-and-kwargs-in-python-explained/" target="_blank"><em>args and *</em>kwargs in python explained</a></li>
+<li><a href="http://blog.amir.rachum.com/post/54770419679/python-common-newbie-mistakes-part-1" target="_blank">Common newbie mistakes in Python- Part 1</a></li>
+<li><a href="http://blog.amir.rachum.com/post/55024295793/python-common-newbie-mistakes-part-2" target="_blank">Common newbie mistakes in Python- Part 2</a></li>
+<li><a href="http://www.pyschools.com/" target="_blank">PySchools</a></li>
+<li><a href="http://www.quora.com/Python-programming-language-1/What-are-some-cool-Python-tricks" target="_blank">Some cool Python Tricks</a></li>
+<li><a href="http://blog.amir.rachum.com/post/30176371115/you-cant-handle-the-truth" target="_blank">if x and if x is not None</a></li>
+<li><a href="http://ozkatz.github.io/better-python-apis.html" target="_blank">Better Python APIs</a></li>
+<li><a href="http://blog.ziade.org/2013/04/13/declaring-dependencies-in-python/" target="_blank">Declaring dependencies in Python</a></li>
+<li><a href="http://freepythontips.wordpress.com/2013/08/08/storing-and-loading-data-with-json/" target="_blank">Storing and Loading Data with JSON - Serialization/deserialization</a></li>
+<li><a href="http://www.rafekettler.com/magicmethods.html" target="_blank">A Guide to Python’s Magic Methods</a></li>
+<li><a href="http://www.skymind.com/~ocrow/python_string/" target="_blank">Efficient String Concatenation in Python</a></li>
+<li><a href="http://mikegrouchy.com/blog/2012/05/be-pythonic-__init__py.html" target="_blank">Be Pythonic: <strong>init</strong>.py</a></li>
+<li><a href="http://kirang.in/2013/09/09/building-an-open-source-python-application-the-right-way/" target="_blank">Building an open-source Python application the right way</a></li>
+<li><a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru" target="_blank">Python progression path - From apprentice to guru</a></li>
+<li><a href="http://www.tutorialspoint.com/python/" target="_blank">Tutorialspoint python tutorial</a></li>
+<li><a href="http://blog.amir.rachum.com/post/63666832095/python-importing" target="_blank">Python Importing</a></li>
+<li><a href="http://rhettinger.wordpress.com/2011/05/26/super-considered-super/" target="_blank">Python’s super() considered super!</a></li>
+<li><a href="http://www.wilfred.me.uk/blog/2013/11/03/no-naked-excepts/" target="_blank">No Naked Excepts</a></li>
+<li><a href="http://www.jeffknupp.com/blog/2013/11/15/supercharge-your-python-developers/" target="_blank">Supercharge Your Python Developers</a></li>
+</ul>
+<h2 id="Why_Python?">Why Python?</h2>
+<ul>
+<li><a href="http://www.python.org/about/success/esr/" target="_blank">Python Success Stories</a></li>
+<li><a href="http://www.slideshare.net/arnav/python-presentation" target="_blank">Why Python - Slideshare</a></li>
+<li><a href="http://www.codercaste.com/2009/10/20/5-reasons-why-you-should-learn-python-programming/" target="_blank">5 Reasons Why You Should Learn Python Programming</a></li>
+<li><a href="http://www.stat.washington.edu/~hoytak/blog/whypython.html" target="_blank">10 Reasons Python Rocks for Research (And a Few Reasons it Doesn’t)</a></li>
+<li><a href="https://programmers.stackexchange.com/questions/5427/why-such-popularity-with-python" target="_blank">Why such popularity with Python?</a></li>
+<li><a href="https://programmers.stackexchange.com/questions/27207/why-was-pythons-popularity-so-sudden?rq=1" target="_blank">Why was Python’s popularity so sudden?</a></li>
+<li><a href="http://www.reddit.com/r/Python/comments/1mb4y4/why_python/" target="_blank">Why Python?</a></li>
+<li><a href="http://blog.mikiobraun.de/2013/11/how-python-became-the-language-of-choice-for-data-science.html" target="_blank">How Python became the language of choice for data science</a></li>
+</ul>
+<h2 id="Style_Guide_and_Idioms">Style Guide and Idioms</h2>
+<ul>
+<li><a href="http://www.python.org/dev/peps/pep-0008/" target="_blank">PEP 8 - Style Guide for Python Code</a></li>
+<li><a href="http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html" target="_blank">Code Like a Pythonista: Idiomatic Python</a></li>
+<li><a href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html" target="_blank">Google Python Style Guide</a></li>
+<li><a href="https://www.memonic.com/user/pneff/folder/python/id/1bufp" target="_blank">Python Idioms and Efficiency</a></li>
+<li><a href="http://eikke.com/how-not-to-write-python-code/" target="_blank">How not to write Python code</a></li>
+<li><a href="http://www.python.org/dev/peps/pep-0257/" target="_blank">Docstring Conventions</a></li>
+</ul>
+<h2 id="Dictionary">Dictionary</h2>
+<ul>
+<li><a href="http://blog.amir.rachum.com/post/54458435089/python-hash-id-and-dictionary-order" target="_blank">Python hash, id and dictionary order</a></li>
+<li><a href="http://bugs.python.org/file6941/dictnotes.txt" target="_blank">Notes on dictionary implementation</a></li>
+<li><a href="http://blog.amir.rachum.com/post/39501813266/python-the-dictionary-playbook" target="_blank">Python: The Dictionary Playbook</a></li>
+</ul>
+<h2 id="Decorators">Decorators</h2>
+<ul>
+<li><a href="http://simeonfranklin.com/blog/2012/jul/1/python-decorators-in-12-steps/" target="_blank">Understanding Python Decorators in 12 easy steps</a></li>
+<li><a href="http://www.quora.com/Python-programming-language-1/What-are-common-uses-of-Python-decorators" target="_blank">Common uses of Python decorators - Quora</a></li>
+<li><a href="http://stackoverflow.com/questions/489720/what-are-some-common-uses-for-python-decorators" target="_blank">Common uses of Python decorators - Stack Overflow</a></li>
+<li><a href="http://pythonconquerstheuniverse.wordpress.com/2012/04/29/python-decorators/" target="_blank">Python Decorators</a></li>
+<li><a href="http://www.artima.com/weblogs/viewpost.jsp?thread=240808" target="_blank">Decorators I: Introduction to Python Decorators</a></li>
+<li><a href="http://blog.mattalcock.com/2013/1/5/decorates-and-annotations/" target="_blank">Decorators and annotations</a></li>
+<li><a href="http://apiguy.github.io/blog/2013/06/03/the-dark-side-of-decorators/" target="_blank">The dark side of decorators</a></li>
+<li><a href="http://curiosityhealsthecat.blogspot.in/2013/06/thinking-out-aloud-python-decorators_8528.html" target="_blank">Thinking out aloud: Python decorators</a></li>
+<li><a href="http://curiosityhealsthecat.blogspot.in/2013/07/using-python-decorators-for-registering_8614.html" target="_blank">Using Python decorators for registering callbacks</a></li>
+<li><a href="http://pydanny-event-notes.readthedocs.org/en/latest/PyconAU2011/decorators.html" target="_blank">Meta-matters: Using decorators for better Python programming</a></li>
+<li><a href="http://stackoverflow.com/questions/739654/how-can-i-make-a-chain-of-function-decorators-in-python/1594484#1594484" target="_blank">How can I make a chain of function decorators in Python?</a></li>
+<li><a href="https://wiki.python.org/moin/PythonDecoratorLibrary" target="_blank">The Python Decorator Library</a></li>
+<li><a href="http://www.jeffknupp.com/blog/2013/11/29/improve-your-python-decorators-explained/" target="_blank">Improve Your Python: Decorators Explained</a></li>
+<li><a href="http://hackflow.com/blog/2013/11/03/painless-decorators/" target="_blank">Painless Decorators</a></li>
+</ul>
+<h2 id="Generators">Generators</h2>
+<ul>
+<li><a href="http://www.dabeaz.com/generators-uk/" target="_blank">Generator Tricks for Systems Programmers</a></li>
+<li><a href="http://docs.python.org/3/whatsnew/3.3.html#pep-380-syntax-for-delegating-to-a-subgenerator" target="_blank">Delegating to a Subgenerator in Python 3</a></li>
+</ul>
+<h2 id="Iterators">Iterators</h2>
+<ul>
+<li><a href="http://www.shutupandship.com/2012/01/understanding-python-iterables-and.html" target="_blank">Understanding Iterators and Iterables</a></li>
+</ul>
+<h2 id="Yield">Yield</h2>
+<ul>
+<li><a href="http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained" target="_blank">Python yield keyword explained</a></li>
+</ul>
+<h2 id="Context_Managers">Context Managers</h2>
+<ul>
+<li><a href="http://effbot.org/zone/python-with-statement.htm" target="_blank">Understanding Python’s with statement</a></li>
+<li><a href="http://preshing.com/20110920/the-python-with-statement-by-example/" target="_blank">The Python “with” Statement by Example</a></li>
+</ul>
+<h2 id="Unicode">Unicode</h2>
+<ul>
+<li><a href="http://www.reddit.com/r/Python/comments/1g62eh/explain_it_like_im_five_python_and_unicode/" target="_blank">Explain Unicode like I’m five years old</a></li>
+<li><a href="http://nedbatchelder.com/text/unipain.html" target="_blank">Unicode Pain</a></li>
+<li><a href="http://eric.themoritzfamily.com/python-encodings-and-unicode.html" target="_blank">Python encodings and Unicode</a></li>
+<li><a href="http://lucumr.pocoo.org/2013/7/2/the-updated-guide-to-unicode/" target="_blank">The Updated Guide to Unicode on Python</a></li>
+<li><a href="http://lucumr.pocoo.org/2014/1/5/unicode-in-2-and-3/" target="_blank">More About Unicode in Python 2 and 3</a></li>
+<li><a href="http://blogs.skicelab.com/maurizio/unicode-common-pitfalls.html" target="_blank">Unicode in Python: Common Pitfalls</a></li>
+</ul>
+<h2 id="Networking">Networking</h2>
+<ul>
+<li><a href="http://freepythontips.wordpress.com/2013/08/06/python-socket-network-programming/" target="_blank">An intro to Python socket network programming</a></li>
+</ul>
+<h2 id="Metaclasses">Metaclasses</h2>
+<ul>
+<li><a href="http://jakevdp.github.io/blog/2012/12/01/a-primer-on-python-metaclasses/" target="_blank">A primer on python metaclasses</a></li>
+<li><a href="http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python" target="_blank">What is a metaclass in Python ?</a></li>
+<li><a href="http://blog.fruiapps.com/2013/03/Yet-another-Python-MetaClass-Tutorial" target="_blank">Yet Another Python Metaclass tutorial</a></li>
+<li><a href="http://www.jeffknupp.com/blog/2013/12/28/improve-your-python-metaclasses-and-dynamic-classes-with-type/" target="_blank">Improve Your Python: Metaclasses and Dynamic Classes With Type</a></li>
+<li><a href="http://pypix.com/python/metaprogramming-python/" target="_blank">Metaprogramming in Python</a></li>
+</ul>
+<h2 id="Documentation">Documentation</h2>
+<ul>
+<li><a href="http://kennethreitz.org/documentation-is-king/" target="_blank">Documentation is King</a></li>
+<li><a href="http://kirang89.webfactional.com/2013/05/07/make-your-open-source-project-documentation-suck-less/" target="_blank">Make your open source project documentation suck less</a></li>
+<li><a href="http://pydoc.net/" target="_blank">Python Documentation Network</a></li>
+</ul>
+<h3 id="Sphinx">Sphinx</h3>
+<ul>
+<li><a href="http://scriptsonscripts.blogspot.in/2012/09/quick-sphinx-documentation-for-python.html" target="_blank">Quick Sphinx documentation for Python</a></li>
+</ul>
+<h2 id="Environments_and_Environment_Management">Environments and Environment Management</h2>
+<ul>
+<li><a href="http://www.virtualenv.org/en/latest/" target="_blank">Virtualenv - The official documentation</a></li>
+<li><a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/" target="_blank">Virtual Environments — The Hitchhiker’s Guide to Python</a></li>
+<li><a href="http://simononsoftware.com/virtualenv-tutorial/" target="_blank">Virtualenv Tutorial</a></li>
+<li><a href="http://iamzed.com/2009/05/07/a-primer-on-virtualenv/" target="_blank">A Primer on virtualenv</a></li>
+<li><a href="http://www.pythonforbeginners.com/basics/how-to-use-python-virtualenv" target="_blank">How to use Python virtualenv</a></li>
+<li><a href="http://hmarr.com/2010/jan/19/making-virtualenv-play-nice-with-git/" target="_blank">Making Virtualenv play nice with Git</a></li>
+<li><a href="https://bitbucket.org/dhellmann/virtualenvwrapper" target="_blank">Extension to Virtualenv</a></li>
+<li><a href="https://github.com/brainsik/virtualenv-burrito" target="_blank">VirtualEnv Burrito = virtualenv + virtualenvwrapper</a></li>
+</ul>
+<h2 id="Debugging">Debugging</h2>
+<ul>
+<li><a href="http://blog.ionelmc.ro/2013/06/05/python-debugging-tools/" target="_blank">Debugging Tools in Python</a></li>
+<li><a href="https://zapier.com/engineering/debugging-python-boss/" target="_blank">Debugging Python Like a Boss</a></li>
+</ul>
+<h3 id="Logging">Logging</h3>
+<ul>
+<li><a href="https://sentry.readthedocs.org/en/latest/index.html" target="_blank">Sentry - realtime event logging and aggregation platform</a></li>
+</ul>
+<h2 id="Testing">Testing</h2>
+<ul>
+<li><a href="http://pythontesting.net/framework/nose/nose-introduction/" target="_blank">Nose Introduction</a></li>
+<li><a href="http://pythontesting.net/framework/unittest/unittest-introduction/" target="_blank">Unittest Introduction</a></li>
+<li><a href="https://github.com/audreyr/how-to/blob/master/python/use_coverage_with_unittest.rst" target="_blank">How To Use Coverage.py With Unittest</a></li>
+<li><a href="http://ivory.idyll.org/articles/nose-intro.html" target="_blank">An Extended Introduction to the nose Unit Testing Framework</a></li>
+<li><a href="http://blog.flaper87.com/post/522b9e560f06d32542ede77f/" target="_blank">Test strategies for your Python projects</a></li>
+<li><a href="http://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/" target="_blank">Improve Your Python: Understanding Unit Testing</a></li>
+<li><a href="http://www.toptal.com/python/an-introduction-to-mocking-in-python" target="_blank">An Introduction to Mocking in Python</a></li>
+</ul>
+<h2 id="Profiling">Profiling</h2>
+<ul>
+<li><a href="http://www.huyng.com/posts/python-performance-analysis/" target="_blank">A guide to analyzing Python performance</a></li>
+<li><a href="https://zapier.com/engineering/profiling-python-boss/" target="_blank">Profiling Python Like a Boss</a></li>
+</ul>
+<h2 id="Packaging">Packaging</h2>
+<ul>
+<li><a href="http://guide.python-distribute.org/" target="_blank">The Hitchhiker’s Guide to Packaging</a></li>
+<li><a href="http://hynek.me/articles/sharing-your-labor-of-love-pypi-quick-and-dirty/" target="_blank">Sharing Your Labor of Love: PyPI Quick And Dirty</a></li>
+<li><a href="http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/" target="_blank">Open Sourcing a Python Project the Right Way</a></li>
+<li><a href="http://ziade.org/2011/08/19/5-tips-for-packaging-your-python-projects/" target="_blank">5 tips for packaging your Python projects</a></li>
+<li><a href="http://www.aosabook.org/en/packaging.html" target="_blank">AOSA: Python Packaging</a></li>
+<li><a href="http://blog.miguelgrinberg.com/post/the-package-dependency-blues" target="_blank">The Package Dependency Blues</a></li>
+<li><a href="http://axialcorps.com/2013/08/29/5-simple-rules-for-building-great-python-packages" target="_blank">5 Simple Rules For Building Great Python Packages</a></li>
+<li><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank">Unofficial Windows Binaries for Python Extension Packages</a></li>
+<li><a href="http://pythonhosted.org/py2app/" target="_blank">Py2app: Standalone Mac OS X applications</a></li>
+<li><a href="http://www.pyinstaller.org/" target="_blank">PyInstaller: Stand-alone executables, under Windows, Linux, Mac OS X, Solaris and AIX</a></li>
+</ul>
+<h2 id="Deployment">Deployment</h2>
+<ul>
+<li><a href="http://hynek.me/talks/python-deployments" target="_blank">Solid Python Deployments for Everybody</a></li>
+</ul>
+<h3 id="Fabric">Fabric</h3>
+<ul>
+<li><a href="http://www.pythonforbeginners.com/systems-programming/how-to-use-fabric-in-a-development-environment/" target="_blank">Using Fabric in a development environment</a></li>
+<li><a href="http://dmsimard.com/2013/11/29/capture-output-from-parallel-execution-with-fabric/" target="_blank">Capture output from parallel execution with Fabric</a></li>
+</ul>
+<h2 id="Warts_and_Gotchas">Warts and Gotchas</h2>
+<ul>
+<li><a href="http://stackoverflow.com/questions/530530/python-2-x-gotchas-and-landmines" target="_blank">Python 2.x gotcha’s and landmines</a></li>
+<li><a href="https://wiki.python.org/moin/PythonWarts" target="_blank">Python Warts</a></li>
+<li><a href="http://blog.artlogic.com/2013/04/12/python-gotchas/" target="_blank">Python Gotchas</a></li>
+<li><a href="http://stackoverflow.com/questions/1011431/common-pitfalls-in-python/1321075#1321075" target="_blank">Common Pitfalls in Python</a></li>
+</ul>
+<h2 id="Web">Web</h2>
+<ul>
+<li><a href="http://mrjoes.github.io/2013/06/21/python-realtime.html" target="_blank">Python and Realtime Web</a></li>
+</ul>
+<h3 id="Frameworks">Frameworks</h3>
+<h4 id="Flask">Flask</h4>
+<ul>
+<li><a href="http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world" target="_blank">Flask Mega Tutorial Series</a></li>
+<li><a href="http://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask" target="_blank">Designing a RESTful API with Python and Flask</a></li>
+<li><a href="http://maximebf.com/blog/2012/10/building-websites-in-python-with-flask" target="_blank">Building websites in Python with Flask</a></li>
+<li><a href="http://mattupstate.com/python/2013/06/26/how-i-structure-my-flask-applications.html" target="_blank">How I structure my Flask apps</a></li>
+<li><a href="http://blog.miguelgrinberg.com/post/designing-a-restful-api-using-flask-restful" target="_blank">Designing a RESTful API using Flask-RESTful</a></li>
+<li><a href="http://www.pixelmonkey.org/2013/03/13/rapid-web-prototyping-with-lightweight-tools" target="_blank">Rapid Web Prototyping with Lightweight Tools</a></li>
+<li><a href="http://www.jamesharding.ca/posts/simple-static-markdown-blog-in-flask/" target="_blank">Build a Simple, Static, Markdown-Powered Blog with Flask</a></li>
+<li><a href="http://tech.pro/tutorial/1213/how-to-build-an-api-with-python-and-flask" target="_blank">How to Build an API with Python and Flask</a></li>
+<li><a href="http://pypix.com/python/create-simple-music-streaming-app-flask/" target="_blank">Create a Simple Music Streaming App with Flask</a></li>
+</ul>
+<h4 id="Web2Py">Web2Py</h4>
+<ul>
+<li><a href="http://fragile.org.uk/2013/06/twitter-clone-tutorial-in-web2py-part-1-getting-started/" target="_blank">Building a Twitter clone in Web2Py</a></li>
+</ul>
+<h4 id="Django">Django</h4>
+<ul>
+<li><a href="https://docs.djangoproject.com/en/1.5/" target="_blank">The official Django documentation</a></li>
+<li><a href="http://gettingstartedwithdjango.com/" target="_blank">Getting started with Django</a></li>
+<li><a href="http://www.jeffknupp.com/blog/2013/12/18/starting-a-django-16-project-the-right-way/" target="_blank">Starting a Django 1.6 Project the Right Way</a></li>
+<li><a href="http://arunrocks.com/building-a-hacker-news-clone-in-django-part-1/" target="_blank">Building a hacker news clone in Django</a></li>
+<li><a href="http://agiliq.com/books/djenofdjango/" target="_blank">Djen of Django</a></li>
+<li><a href="http://www.rdegges.com/deploying-django/" target="_blank">Deploying Django</a></li>
+<li><a href="http://www.lightbird.net/dbe/" target="_blank">Django by Example</a></li>
+<li><a href="http://showmedo.com/videotutorials/series?name=PPN7NA155" target="_blank">Django From the Ground Up (video tutorials)</a></li>
+<li><a href="http://www.tangowithdjango.com/book/" target="_blank">Tango with Django</a></li>
+<li><a href="https://godjango.com/" target="_blank">Django Screencasts</a></li>
+<li><a href="http://pypix.com/django/tdd-in-django/" target="_blank">Let’s TDD a Simple App in Django</a></li>
+<li><a href="http://mgile.com/post/4729505823/django-stunnel" target="_blank">Django runserver and stunnel for testing HTTPS</a></li>
+<li><a href="http://engineering.hackerearth.com/2013/10/07/scaling-database-with-django-and-haproxy/" target="_blank">Scaling database with Django and HAProxy</a></li>
+<li><a href="http://ccbv.co.uk/" target="_blank">Classy Class-Based Views</a></li>
+</ul>
+<h4 id="Bottle">Bottle</h4>
+<ul>
+<li><a href="http://www.realpython.com/blog/python/developing-with-bottle-part-1/" target="_blank">Developing with Bottle- Part 1</a></li>
+</ul>
+<h4 id="Tornado">Tornado</h4>
+<ul>
+<li><a href="http://www.tornadoweb.org/en/stable/documentation.html" target="_blank">Tornado official documentation</a></li>
+<li><a href="http://www.peterbe.com/plog/fastestdb" target="_blank">Fastest database for Tornado</a></li>
+</ul>
+<h3 id="Web_Servers">Web Servers</h3>
+<ul>
+<li><a href="https://www.digitalocean.com/community/articles/a-comparison-of-web-servers-for-python-based-web-applications" target="_blank">A Comparison of Web Servers for Python Based Web Applications</a></li>
+</ul>
+<h3 id="API_and_Web_Services">API and Web Services</h3>
+<ul>
+<li><a href="http://www.pythonforbeginners.com/python-on-the-web/how-to-access-various-web-services-in-python/" target="_blank">How to access various web services in python</a></li>
+<li><a href="http://www.pythonapi.com/" target="_blank">Python API for various web services</a></li>
+<li><a href="https://github.com/hackerlist/glassdoor" target="_blank">Glassdoor API</a></li>
+</ul>
+<h3 id="Scraping">Scraping</h3>
+<ul>
+<li><a href="http://www.pythonforbeginners.com/python-on-the-web/web-scraping-with-beautifulsoup/" target="_blank">Web Scraping with BeautifulSoup</a></li>
+<li><a href="http://www.gregreda.com/2013/03/03/web-scraping-101-with-python/" target="_blank">Web Scraping 101 with Python</a></li>
+<li><a href="http://doc.scrapy.org/en/latest/intro/tutorial.html" target="_blank">Web Scraping with Scrapy Framework</a></li>
+<li><a href="http://fuzz-box.blogspot.in/2013/03/how-to-automatically-search-download-torrent-python-scrapy.html" target="_blank">How to automatically search and download torrents with Python and Scrapy</a></li>
+</ul>
+<h2 id="Mobile_Development">Mobile Development</h2>
+<h3 id="Kivy">Kivy</h3>
+<ul>
+<li><a href="http://archlinux.me/dusty/2013/06/13/creating-an-application-in-kivy-part-1/" target="_blank">Creating an app in Kivy</a></li>
+</ul>
+<h2 id="Google_Glass">Google Glass</h2>
+<h3 id="Resources">Resources</h3>
+<ul>
+<li><a href="https://developers.google.com/glass/quickstart/python" target="_blank">The official Python Quick Start for Google Glass</a></li>
+</ul>
+<h3 id="Libraries">Libraries</h3>
+<h4 id="glass-py">glass.py</h4>
+<ul>
+<li><a href="https://github.com/SamyPesse/glass.py" target="_blank">Create python web applications for Google Glass</a></li>
+</ul>
+<h2 id="Image_Processing">Image Processing</h2>
+<ul>
+<li><a href="http://www.riisen.dk/dop/pil.html" target="_blank">Python Image Library - Examples</a></li>
+</ul>
+<h2 id="GUI_Programming">GUI Programming</h2>
+<ul>
+<li><a href="https://wiki.python.org/moin/GuiProgramming" target="_blank">Python.org GUI Overview Page</a></li>
+<li><a href="http://zetcode.com/tutorials/pyqt4/" target="_blank">PyQt Tutorial</a></li>
+<li><a href="http://www.py2exe.org/index.cgi/Py2exeAndPyQt" target="_blank">Standalone executable for PyQt4 on Windows</a></li>
+<li><a href="http://kivy.org/" target="_blank">Kivy GUI for cross-platform applications</a></li>
+<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm" target="_blank">EffBot.org Introduction to Tkinter</a></li>
+<li><a href="https://github.com/tmetsch/pytkgen" target="_blank">Pytkgen: JSON to Tkinter GUI Generator</a></li>
+<li><a href="https://wiki.python.org/moin/Intro%20to%20programming%20with%20Python%20and%20Tkinter" target="_blank">Intro to programming with Python and Tkinter</a></li>
+</ul>
+<h2 id="Android">Android</h2>
+<h3 id="SL4A">SL4A</h3>
+<ul>
+<li><a href="http://www.brokenairplane.com/2011/08/im-not-texting-im-programming.html" target="_blank">Making the Physics Gizmo app for Android using SL4A</a></li>
+</ul>
+<h2 id="WSGI">WSGI</h2>
+<ul>
+<li><a href="http://lucumr.pocoo.org/2007/5/21/getting-started-with-wsgi/" target="_blank">Getting started with WSGI</a></li>
+<li><a href="http://agiliq.com/blog/2013/07/basics-wsgi/" target="_blank">WSGI Basics</a></li>
+</ul>
+<h2 id="Databases">Databases</h2>
+<h3 id="SQLAlchemy">SQLAlchemy</h3>
+<ul>
+<li><a href="http://www.aosabook.org/en/sqlalchemy.html" target="_blank">SQLAlchemy</a></li>
+<li><a href="http://lucumr.pocoo.org/2011/7/19/sqlachemy-and-you/" target="_blank">SQLAlchemy and you</a></li>
+<li><a href="http://pypix.com/tools-and-tips/essential-sqlalchemy/" target="_blank">Essential SQLAlchemy Tips and Techniques</a></li>
+<li><a href="http://alextechrants.blogspot.fr/2013/11/10-common-stumbling-blocks-for.html" target="_blank">10 common stumbling blocks for SQLAlchemy newbies</a></li>
+</ul>
+<h2 id="Data_Mining">Data Mining</h2>
+<ul>
+<li><a href="http://architects.dzone.com/articles/linux-system-mining-python" target="_blank">Linux system mining using Python</a></li>
+</ul>
+<h2 id="Data_Analysis">Data Analysis</h2>
+<h3 id="Pandas">Pandas</h3>
+<ul>
+<li><a href="http://pandas.pydata.org/pandas-docs/stable/10min.html" target="_blank">A 10 min intro to Pandas</a></li>
+<li><a href="http://manishamde.github.io/blog/2013/03/07/pandas-and-python-top-10/" target="_blank">Pandas and Python: Top 10</a></li>
+<li><a href="https://bitbucket.org/hrojas/learn-pandas" target="_blank">Learn Pandas</a></li>
+</ul>
+<h3 id="IPython_Notebooks">IPython Notebooks</h3>
+<ul>
+<li><a href="http://nbviewer.ipython.org/github/myhrvold/MH370_MCMC/blob/master/MH370_MC_ConorMyhrvold.ipynb" target="_blank">Modeling the Last Flight of MH370 with a Markov Chain Monte Carlo Method</a></li>
+<li><a href="http://nbviewer.ipython.org/github/URXtech/techblog/blob/master/continuousTimeMarkovChain/markovChain.ipynb" target="_blank">Differential Equations in Data Science</a></li>
+<li><a href="http://nbviewer.ipython.org/gist/ketch/8554686" target="_blank">Stegotons: solitary waves arising in non-dispersive periodic media</a></li>
+<li><a href="http://nbviewer.ipython.org/url/norvig.com/ipython/TSPv3.ipynb" target="_blank">The Traveling Salesperson Problem</a></li>
+<li><a href="http://nbviewer.ipython.org/url/atwallab.cshl.edu/teaching/QBbootcamp3.ipynb" target="_blank">Scientific Computing with Python</a></li>
+<li><a href="http://nbviewer.ipython.org/urls/raw.github.com/mroberts3000/GpuComputing/master/IPython/GaussianBlur.ipynb" target="_blank">Gaussian Blur</a></li>
+<li><a href="http://nbviewer.ipython.org/url/jakevdp.github.io/downloads/notebooks/UnderstandingTheFFT.ipynb" target="_blank">Understanding the FFT Algorithm</a></li>
+<li><a href="http://nbviewer.ipython.org/urls/raw.github.com/CamDavidsonPilon/lifelines/master/Tutorial%20and%20Examples.ipynb" target="_blank">lifelines: Survival Analysis in Python</a></li>
+<li><a href="http://nbviewer.ipython.org/url/norvig.com/ipython/Economics.ipynb" target="_blank">Economics Simulation</a></li>
+<li><a href="http://nbviewer.ipython.org/urls/raw.github.com/fonnesbeck/multilevel_modeling/master/multilevel_modeling.ipynb" target="_blank">An Introduction to Bayesian Methods for Multilevel Modeling</a></li>
+<li><a href="http://nbviewer.ipython.org/urls/raw.github.com/LCAV/SignalsOfTheDay/master/FloodsOfTheNile.ipynb" target="_blank">The Floods of the Nile</a></li>
+<li><a href="http://nbviewer.ipython.org/urls/raw.github.com/rhiever/Intro-to-Evolutionary-Modeling/master/Animal%2520Foraging%2520and%2520the%2520Evolution%2520of%2520Goal-Directed%2520Cognition.ipynb" target="_blank">Animal Foraging and the Evolution of Goal-Directed Cognition</a></li>
+<li><a href="http://nbviewer.ipython.org/urls/raw.github.com/brianckeegan/Wikipedia/master/wikipedia_scraping.ipynb" target="_blank">Wikipedia data scraping functions</a></li>
+<li><a href="https://github.com/koldunovn/python_for_geosciences" target="_blank">Python for Geosciences</a></li>
+<li><a href="http://www.mat.ucsb.edu/201A/" target="_blank">Media Signal Processing</a><ul>
+<li><a href="http://www.mat.ucsb.edu/201A/console/Digital_Filters-ipython.html" target="_blank">Digital Filters</a></li>
+<li><a href="http://www.mat.ucsb.edu/201A/console/Image_Filtering.html" target="_blank">Image Filtering</a></li>
+<li><a href="http://www.mat.ucsb.edu/201A/console/Audio_Features.html" target="_blank">Audio Features</a></li>
+<li><a href="http://www.mat.ucsb.edu/201A/console/Feature_detection.html" target="_blank">Feature Detection and Matching for Images</a></li>
+<li><a href="http://www.mat.ucsb.edu/201A/console/Gestures.html" target="_blank">Gestures</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Design_Patterns">Design Patterns</h2>
+<ul>
+<li><a href="http://www.youtube.com/watch?v=GZNUfkVIHAY" target="_blank">Python Best Practice Patterns by Vladimir Keleshev</a></li>
+<li><a href="https://github.com/oxnz/design-patterns" target="_blank">28 Design Patterns in Python and Several Other Languages</a></li>
+<li><a href="http://dailypython.wordpress.com/2013/08/04/factory-pattern-in-python/" target="_blank">Factory Pattern In Python</a></li>
+</ul>
+<h3 id="Concurrency_Patterns">Concurrency Patterns</h3>
+<ul>
+<li><a href="http://emptysqua.re/blog/wasps-nest-read-copy-update-python/" target="_blank">Wasp’s Nest: The Read-Copy-Update Pattern In Python</a></li>
+</ul>
+<h2 id="Concurrency_and_Distributed_Systems">Concurrency and Distributed Systems</h2>
+<ul>
+<li><a href="http://architects.dzone.com/articles/gevent-zeromq" target="_blank">Gevent and ZeroMQ</a></li>
+<li><a href="https://celery.readthedocs.org/en/latest/getting-started/index.html" target="_blank">Celery: Distributed Task Queue</a></li>
+<li><a href="http://sdiehl.github.io/gevent-tutorial/" target="_blank">Gevent for the working Python developer</a></li>
+</ul>
+<h2 id="Functional_Programming">Functional Programming</h2>
+<ul>
+<li><a href="http://inventwithpython.com/blog/2011/08/11/recursion-explained-with-the-flood-fill-algorithm-and-zombies-and-cats/" target="_blank">Recursion Explained with the Flood Fill Algorithm</a></li>
+<li><a href="http://pypix.com/python/functional-programming/" target="_blank">Functional Programming in Python</a></li>
+</ul>
+<h2 id="Python_2_vs_3">Python 2 vs 3</h2>
+<ul>
+<li><a href="http://wiki.python.org/moin/Python2orPython3" target="_blank">Python 2 or 3 ?</a></li>
+<li><a href="http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html" target="_blank">Python 3 Q &amp; A</a></li>
+<li><a href="http://alexgaynor.net/2013/dec/30/about-python-3/" target="_blank">About Python 3</a></li>
+<li><a href="http://www.b-list.org/weblog/2008/dec/05/python-3000/" target="_blank">Let’s talk about Python 3.0</a></li>
+<li><a href="http://lucumr.pocoo.org/2010/1/7/pros-and-cons-about-python-3/" target="_blank">Pros and Cons about Python 3</a></li>
+</ul>
+<h3 id="Porting_to_Python_3">Porting to Python 3</h3>
+<ul>
+<li><a href="http://ondrejcertik.blogspot.com/2013/08/how-to-support-both-python-2-and-3.html" target="_blank">How to support both Python 2 and 3</a></li>
+<li><a href="http://pyvideo.org/video/689/how-cherrypy-supports-python-2-and-3" target="_blank">How CherryPy supports Python 2 and 3</a></li>
+<li><a href="http://python3porting.com/" target="_blank">Porting to Python 3 - The Book Site</a></li>
+</ul>
+<h2 id="Books">Books</h2>
+<h3 id="Free">Free</h3>
+<ul>
+<li><a href="https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#python" target="_blank">Free Programming Books - Python</a></li>
+<li><a href="http://freecomputerbooks.com/langPythonBooks.html" target="_blank">Python Programming - Free Computer Books</a></li>
+<li><a href="http://pythonbooks.revolunet.com/" target="_blank">Some free books on Python</a></li>
+<li><a href="http://inventwithpython.com/chapters/" target="_blank">Invent with Python</a></li>
+<li><a href="http://www.greenteapress.com/thinkpython/thinkpython.pdf" target="_blank">Think Python</a></li>
+<li><a href="http://files.swaroopch.com/python/byte_of_python.pdf" target="_blank">Byte of Python</a></li>
+<li><a href="http://www.briggs.net.nz/snake-wrangling-for-kids.html" target="_blank">Snake Wrangling for Kids</a></li>
+<li><a href="http://www.brpreiss.com/books/opus7/html/book.html" target="_blank">Data Structures and Algorithms with Object-Oriented Design Patterns in Python</a></li>
+<li><a href="http://en.wikibooks.org/wiki/Python_Programming" target="_blank">Python programming on wikibooks</a></li>
+<li><a href="http://getpython3.com/diveintopython3/" target="_blank">Dive Into Python 3</a></li>
+<li><a href="http://programmingcomputervision.com/" target="_blank">Programming Computer Vision with Python</a></li>
+<li><a href="http://pymbook.readthedocs.org/en/latest/" target="_blank">Python for you and me</a></li>
+<li><a href="http://programarcadegames.com/" target="_blank">Program Arcade Games With Python And Pygame</a></li>
+</ul>
+<h3 id="Paid">Paid</h3>
+<ul>
+<li><a href="http://wiki.python.org/moin/PythonBooks" target="_blank">Some list of paid books on python</a></li>
+<li><a href="http://python3porting.com/" target="_blank">Porting to Python 3 - The Book Site</a></li>
+</ul>
+<h2 id="Online_Courses_and_Challenges">Online Courses and Challenges</h2>
+<ul>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/index.htm" target="_blank">A Gentle Introduction to Programming Using Python</a></li>
+<li><a href="http://www.pythonchallenge.com/" target="_blank">Python Challenges</a></li>
+<li><a href="http://projecteuler.net" target="_blank">Project Euler</a></li>
+</ul>
+<h2 id="Discussions">Discussions</h2>
+<ul>
+<li><a href="https://news.ycombinator.com/item?id=3746692" target="_blank">What’s your favorite programming language?</a></li>
+<li><a href="https://news.ycombinator.com/item?id=5944863" target="_blank">What is your primary programming language?</a></li>
+<li><a href="http://stackoverflow.com/questions/92230/python-beyond-the-basics" target="_blank">StackOverflow - Python beyond the basics</a></li>
+<li><a href="http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru" target="_blank">StackOverflow - Python progression path from apprentice to guru</a></li>
+<li><a href="http://stackoverflow.com/questions/228181/zen-of-python" target="_blank">StackOverflow - Zen of Python</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python" target="_blank">StackOverflow - Hidden Features of Python</a></li>
+</ul>
+<h2 id="Conferences_and_events">Conferences and events</h2>
+<ul>
+<li><a href="http://www.pycon.org/" target="_blank">Official PyCon website</a></li>
+<li><a href="http://lanyrd.com/topics/python/" target="_blank">Lanyrd - Python Conference and Events</a></li>
+<li><a href="http://python.meetup.com/" target="_blank">Meetup.com - Python Meetup Groups</a></li>
+</ul>
+<h2 id="Videos">Videos</h2>
+<ul>
+<li><a href="http://www.youtube.com/watch?v=ugqu10JV7dk" target="_blank">Guido Van Rossum on the history of Python</a></li>
+<li><a href="http://pyvideo.org/" target="_blank">PyVideo</a></li>
+<li><a href="https://www.khanacademy.org/science/computer-science" target="_blank">Khan Academy - Introduction to programming and computer science using Python</a></li>
+<li><a href="http://www.reddit.com/r/Python/comments/1rs7ub/what_are_some_mustwatch_python_videos/" target="_blank">What are some “must-watch” Python videos ?</a></li>
+<li><a href="http://lanyrd.com/topics/python/video/" target="_blank">Lanyrd - Python Videos</a></li>
+<li><a href="http://showmedo.com/videotutorials/python" target="_blank">Python Videos, Tutorials and Screencasts at ShowMeDo</a></li>
+<li><a href="http://rhodesmill.org/brandon/talks/" target="_blank">Talks by Brandon Rhodes</a></li>
+<li><a href="https://www.youtube.com/watch?v=rXj5nayS7Yg" target="_blank">A Billion Rows per Second: Metaprogramming Python for Big Data</a></li>
+<li><a href="http://thenewboston.org/list.php?cat=36" target="_blank">The newboston site tutorial</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLEA1FEF17E1E5C0DA&amp;feature=plcp" target="_blank">Python Programming Tutorials</a></li>
+</ul>
+<h2 id="Editors_and_IDE’s_for_Python_programming">Editors and IDE’s for Python programming</h2>
+<ul>
+<li><a href="http://dbader.org/blog/setting-up-sublime-text-for-python-development" target="_blank">Setting up Sublime Text for Python Development</a></li>
+<li><a href="http://kennethreitz.org/sublime-text-2-love/" target="_blank">Sublime Text 2 Love by Kenneth Reitz</a></li>
+<li><a href="http://opensourcehacker.com/2012/05/11/sublime-text-2-tips-for-python-and-web-developers/" target="_blank">Sublime Text 2 tips for Python and web developers</a></li>
+<li><a href="http://www.jetbrains.com/pycharm/" target="_blank">PyCharm</a></li>
+<li><a href="http://geany.org/" target="_blank">Geany</a></li>
+<li><a href="http://michaeljaylissner.com/blog/using-pylint-in-geany" target="_blank">Geany with pylint</a></li>
+<li><a href="http://pydev.org" target="_blank">PyDev</a></li>
+<li><a href="http://ninja-ide.org/" target="_blank">Ninja-IDE</a></li>
+<li><a href="http://caisah.info/emacs-for-python/" target="_blank">Emacs setup for python development environment</a></li>
+<li><a href="https://github.com/gabrielelanaro/emacs-for-python" target="_blank">Emacs for python</a></li>
+</ul>
+<h2 id="BigData">BigData</h2>
+<ul>
+<li><a href="http://www.xmind.net/m/WvfC/?goback=%2Emid_I2756675707*43_*1#%21" target="_blank">Mind map of Python for Big Data</a></li>
+</ul>
+<h2 id="Curated_Python_resources_from_other_websites">Curated Python resources from other websites</h2>
+<ul>
+<li><a href="http://codesters.org/resource/topic/python/all/" target="_blank">Python Resources (All) - Codesters.org</a></li>
+</ul>
+<h2 id="Newsletters">Newsletters</h2>
+<ul>
+<li><a href="http://pycoders.com/" target="_blank">Pycoder’s</a></li>
+<li><a href="http://www.pythonweekly.com/" target="_blank">Python Weekly</a></li>
+</ul>
+<h2 id="Miscellaneous">Miscellaneous</h2>
+<ul>
+<li><a href="http://jessenoller.com/good-to-great-python-reads/" target="_blank">Good to great Python reads</a></li>
+<li><a href="http://java.dzone.com/articles/how-create-barcodes-your-pdfs" target="_blank">How to Create Barcodes in Your PDFs with Python</a></li>
+<li><a href="http://www.quora.com/What-are-good-Python-interview-questions" target="_blank">What are some good Python interview questions ?</a></li>
+<li><a href="http://tech.blog.aknin.name/2010/04/02/pythons-innards-introduction/" target="_blank">Python innards introduction</a></li>
+<li><a href="https://github.com/thekarangoel/Projects" target="_blank">Projects - A list of practical projects</a></li>
+<li><a href="http://awaretek.com/tutorials.html" target="_blank">More Python Tutorials</a></li>
+<li><a href="http://pypix.com/tools-and-tips/developer-tools/" target="_blank">Developer Tools in Python</a></li>
+<li><a href="http://pypix.com/roundups/best-python-2013/" target="_blank">The Best of Python in 2013</a></li>
+<li><a href="http://us4.campaign-archive2.com/?u=9735795484d2e4c204da82a29&amp;id=384b699bca&amp;e=1826c8bb55" target="_blank">Top Projects of 2013</a></li>
+<li><a href="http://pypix.com/tools-and-tips/advanced-regular-expression-tips-techniques/" target="_blank">Advanced Regular Expression Tips and Techniques</a></li>
+<li><a href="http://pypix.com/python/advanced-data-structures-python/" target="_blank">Advanced Data Structures in Python</a></li>
+<li><a href="http://freepythontips.wordpress.com/2013/09/01/sudoku-solver-in-python/" target="_blank">Simple Sudoku solver in python</a></li>
+<li><a href="http://freepythontips.wordpress.com/2013/08/30/looking-inside-dropbox-whitepaper/" target="_blank">Looking Inside Dropbox – Security whitepaper</a></li>
+<li><a href="http://rickystewart.wordpress.com/2013/09/03/why-sorting-an-array-makes-a-python-loop-faster/" target="_blank">Why sorting an array makes a Python loop faster</a></li>
+<li><a href="http://www.laurentluce.com/posts/python-integer-objects-implementation/" target="_blank">Python Integer object implementation</a></li>
+<li><a href="http://python-history.blogspot.in/" target="_blank">The history of Python - Blog</a></li>
+<li><a href="http://sharats.me/the-ever-useful-and-neat-subprocess-module.html" target="_blank">The ever useful and neat subprocess module</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python/111176" target="_blank">Hidden Features in Python</a></li>
+<li><a href="http://pymotw.com/2/" target="_blank">Python module of the week</a></li>
+<li><a href="http://programming-motherfucker.com/become.html#Python" target="_blank">Become a programmer</a></li>
+<li><a href="http://pythontutor.com/" target="_blank">Python tutor</a></li>
+<li><a href="https://www.quora.com/Python-programming-language-1/What-are-the-best-developer-blogs-about-Python-development" target="_blank">Best developer blogs about python - Quora</a></li>
+<li><a href="http://stackoverflow.com/questions/152480/python-blogs-that-you-regularly-follow" target="_blank">Python blogs -Stackoverflow</a></li>
+<li><a href="http://hackflow.com/blog/2013/10/08/abstracting-control-flow/" target="_blank">Abstracting Control Flow</a></li>
+<li><a href="http://pyalgoviz.appspot.com/" target="_blank">Python Algorithm Visualizations done in Python running in the browser</a></li>
+<li><a href="http://norvig.com/sudoku.html" target="_blank">Solving Every Sudoku Puzzle</a></li>
+<li><a href="http://www.iheartpy.com/" target="_blank">IHeartPy!</a></li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/python/">python</a><a href="/tags/github/">github</a><a href="/tags/pycrumbs/">pycrumbs</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://www.exuan.org/2014/04/04/github-python-resources-pycrumbs/" data-title="Github上的python资料 | 雪轩" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/03/19/tornado-learnning-01/"  title="tornado 学习笔记 01">
+ <strong>NEXT:</strong><br/> 
+ <span>tornado 学习笔记 01
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Contents"><span class="toc-number">1.</span> <span class="toc-text">Contents</span></a></li><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Beginner’s_Delight"><span class="toc-number">1.1.</span> <span class="toc-text">Beginner’s Delight</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why_Python?"><span class="toc-number">1.2.</span> <span class="toc-text">Why Python?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Style_Guide_and_Idioms"><span class="toc-number">1.3.</span> <span class="toc-text">Style Guide and Idioms</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dictionary"><span class="toc-number">1.4.</span> <span class="toc-text">Dictionary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Decorators"><span class="toc-number">1.5.</span> <span class="toc-text">Decorators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Generators"><span class="toc-number">1.6.</span> <span class="toc-text">Generators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Iterators"><span class="toc-number">1.7.</span> <span class="toc-text">Iterators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield"><span class="toc-number">1.8.</span> <span class="toc-text">Yield</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Context_Managers"><span class="toc-number">1.9.</span> <span class="toc-text">Context Managers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unicode"><span class="toc-number">1.10.</span> <span class="toc-text">Unicode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Networking"><span class="toc-number">1.11.</span> <span class="toc-text">Networking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Metaclasses"><span class="toc-number">1.12.</span> <span class="toc-text">Metaclasses</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Documentation"><span class="toc-number">1.13.</span> <span class="toc-text">Documentation</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sphinx"><span class="toc-number">1.13.1.</span> <span class="toc-text">Sphinx</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Environments_and_Environment_Management"><span class="toc-number">1.14.</span> <span class="toc-text">Environments and Environment Management</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Debugging"><span class="toc-number">1.15.</span> <span class="toc-text">Debugging</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Logging"><span class="toc-number">1.15.1.</span> <span class="toc-text">Logging</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Testing"><span class="toc-number">1.16.</span> <span class="toc-text">Testing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Profiling"><span class="toc-number">1.17.</span> <span class="toc-text">Profiling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Packaging"><span class="toc-number">1.18.</span> <span class="toc-text">Packaging</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deployment"><span class="toc-number">1.19.</span> <span class="toc-text">Deployment</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fabric"><span class="toc-number">1.19.1.</span> <span class="toc-text">Fabric</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Warts_and_Gotchas"><span class="toc-number">1.20.</span> <span class="toc-text">Warts and Gotchas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web"><span class="toc-number">1.21.</span> <span class="toc-text">Web</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Frameworks"><span class="toc-number">1.21.1.</span> <span class="toc-text">Frameworks</span></a></li><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flask"><span class="toc-number">1.21.1.1.</span> <span class="toc-text">Flask</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Web2Py"><span class="toc-number">1.21.1.2.</span> <span class="toc-text">Web2Py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Django"><span class="toc-number">1.21.1.3.</span> <span class="toc-text">Django</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bottle"><span class="toc-number">1.21.1.4.</span> <span class="toc-text">Bottle</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tornado"><span class="toc-number">1.21.1.5.</span> <span class="toc-text">Tornado</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#Web_Servers"><span class="toc-number">1.21.2.</span> <span class="toc-text">Web Servers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API_and_Web_Services"><span class="toc-number">1.21.3.</span> <span class="toc-text">API and Web Services</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scraping"><span class="toc-number">1.21.4.</span> <span class="toc-text">Scraping</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Mobile_Development"><span class="toc-number">1.22.</span> <span class="toc-text">Mobile Development</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kivy"><span class="toc-number">1.22.1.</span> <span class="toc-text">Kivy</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Google_Glass"><span class="toc-number">1.23.</span> <span class="toc-text">Google Glass</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Resources"><span class="toc-number">1.23.1.</span> <span class="toc-text">Resources</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Libraries"><span class="toc-number">1.23.2.</span> <span class="toc-text">Libraries</span></a></li><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#glass-py"><span class="toc-number">1.23.2.1.</span> <span class="toc-text">glass.py</span></a></li></ol></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Image_Processing"><span class="toc-number">1.24.</span> <span class="toc-text">Image Processing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GUI_Programming"><span class="toc-number">1.25.</span> <span class="toc-text">GUI Programming</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android"><span class="toc-number">1.26.</span> <span class="toc-text">Android</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SL4A"><span class="toc-number">1.26.1.</span> <span class="toc-text">SL4A</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#WSGI"><span class="toc-number">1.27.</span> <span class="toc-text">WSGI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Databases"><span class="toc-number">1.28.</span> <span class="toc-text">Databases</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQLAlchemy"><span class="toc-number">1.28.1.</span> <span class="toc-text">SQLAlchemy</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Data_Mining"><span class="toc-number">1.29.</span> <span class="toc-text">Data Mining</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data_Analysis"><span class="toc-number">1.30.</span> <span class="toc-text">Data Analysis</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pandas"><span class="toc-number">1.30.1.</span> <span class="toc-text">Pandas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPython_Notebooks"><span class="toc-number">1.30.2.</span> <span class="toc-text">IPython Notebooks</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Design_Patterns"><span class="toc-number">1.31.</span> <span class="toc-text">Design Patterns</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Concurrency_Patterns"><span class="toc-number">1.31.1.</span> <span class="toc-text">Concurrency Patterns</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Concurrency_and_Distributed_Systems"><span class="toc-number">1.32.</span> <span class="toc-text">Concurrency and Distributed Systems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Functional_Programming"><span class="toc-number">1.33.</span> <span class="toc-text">Functional Programming</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python_2_vs_3"><span class="toc-number">1.34.</span> <span class="toc-text">Python 2 vs 3</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Porting_to_Python_3"><span class="toc-number">1.34.1.</span> <span class="toc-text">Porting to Python 3</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Books"><span class="toc-number">1.35.</span> <span class="toc-text">Books</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Free"><span class="toc-number">1.35.1.</span> <span class="toc-text">Free</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Paid"><span class="toc-number">1.35.2.</span> <span class="toc-text">Paid</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Online_Courses_and_Challenges"><span class="toc-number">1.36.</span> <span class="toc-text">Online Courses and Challenges</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discussions"><span class="toc-number">1.37.</span> <span class="toc-text">Discussions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conferences_and_events"><span class="toc-number">1.38.</span> <span class="toc-text">Conferences and events</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Videos"><span class="toc-number">1.39.</span> <span class="toc-text">Videos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Editors_and_IDE’s_for_Python_programming"><span class="toc-number">1.40.</span> <span class="toc-text">Editors and IDE’s for Python programming</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigData"><span class="toc-number">1.41.</span> <span class="toc-text">BigData</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Curated_Python_resources_from_other_websites"><span class="toc-number">1.42.</span> <span class="toc-text">Curated Python resources from other websites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Newsletters"><span class="toc-number">1.43.</span> <span class="toc-text">Newsletters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Miscellaneous"><span class="toc-number">1.44.</span> <span class="toc-text">Miscellaneous</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/github/" title="github">github<sup>1</sup></a></li>
+		
+			<li><a href="/tags/pycrumbs/" title="pycrumbs">pycrumbs<sup>1</sup></a></li>
+		
+			<li><a href="/tags/python/" title="python">python<sup>2</sup></a></li>
+		
+			<li><a href="/tags/tornado/" title="tornado">tornado<sup>1</sup></a></li>
+		
+			<li><a href="/tags/笔记/" title="笔记">笔记<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="http://www.exuan.org" target="_blank" title="exuan">exuan</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
